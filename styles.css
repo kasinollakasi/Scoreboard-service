@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+body {
+	margin: 0;
+	padding: 60px 0px 0px 60px;
+	background: #eeeeee;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+	font-family: 'Press Start 2P', cursive;
+}
+
+th, td {
+  text-align: left;
+  padding right: 16px;
+	padding-right: 150px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+form {
+	padding-top: 10px;
+	font-weight: bold;
+}
+
+button {
+	padding: 10px;
+	background-color: #f5f5f5;
+	box-shadow: 2px 2px;
+}
+
+button:hover {
+	opacity: 0.5;
+	transition: .3s ease;
+	cursor: pointer;
+}
+
+button:active {
+  box-shadow: 0px 0px;
+  transform: translateY(2px);
+}
+
+.addScore {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	padding: 10px;
+	background-color: #f3f3f3;
+	box-shadow: 2px 2px;
+}
+
+.addScore:hover {
+	opacity: 0.5;
+	transition: .3s ease;
+	cursor: pointer;
+}
+
+.addScore:active {
+	box-shadow: 0px 0px;
+  transform: translateY(2px);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Scoreboard service</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>Scoreboard service</h1>
+    <p>List of points that players have scored</p>
+    <br>
+    <p><button onclick="sortTable()">Sort by high score</button></p>
+
+    <table id="myTable">
+      <tr>
+        <th>Points scored</th>
+        <th>Player name</th>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td>Stephen Curry</td>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td>Lebron James</td>
+      </tr>
+      <tr>
+        <td>63</td>
+        <td>Magic Johnson</td>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td>Lauri Markkanen</td>
+      </tr>
+    </table>
+    <form id="myForm">
+      Insert score:
+      <input type="text" name="score" id="score">
+      Insert player name:
+      <input type="text" name="playerName" id="playerName">
+      <br>
+    </form>
+      <p style="font-weight: lighter; font-style: oblique;">(Please insert both score and player name before submitting)</p>
+      <input class="addScore" type="button" value="Add score & player" onClick="addRow()" id="add">
+
+    <script>
+
+    function addRow() {
+      "use strict";
+
+      var table = document.getElementById("myTable");
+      var row= document.createElement("tr");
+      var td1 = document.createElement("td");
+      var td2 = document.createElement("td");
+
+      td1.innerHTML = document.getElementById("score").value;
+      td2.innerHTML  = document.getElementById("playerName").value;
+
+      row.appendChild(td1);
+      row.appendChild(td2);
+
+      table.children[0].appendChild(row);
+      document.getElementById("myForm").reset();
+    }
+
+    function sortTable() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[0];
+          y = rows[i + 1].getElementsByTagName("TD")[0];
+          if (Number(x.innerHTML) < Number(y.innerHTML)) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+    </script>
+  </body>
+</html>
